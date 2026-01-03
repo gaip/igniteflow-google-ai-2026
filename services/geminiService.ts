@@ -6,7 +6,7 @@ const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 export const conductMarketResearch = async (query: string) => {
   const ai = getAI();
   const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
+    model: "gemini-1.5-flash-latest",
     contents: `Conduct a deep competitive analysis and market size estimation for the following startup idea: ${query}. Focus on current trends (2024-2025).`,
     config: {
       tools: [{ googleSearch: {} }],
@@ -27,7 +27,7 @@ export const conductMarketResearch = async (query: string) => {
 export const generateStartupStrategy = async (idea: string) => {
   const ai = getAI();
   const response = await ai.models.generateContent({
-    model: "gemini-3-pro-preview",
+    model: "gemini-1.5-pro-latest",
     contents: `Generate a detailed Lean Canvas, GTM strategy, and potential pitfalls for: ${idea}`,
     config: {
       thinkingConfig: { thinkingBudget: 2000 },
@@ -40,7 +40,7 @@ export const generateStartupStrategy = async (idea: string) => {
 export const generateBrandAsset = async (prompt: string, aspectRatio: "1:1" | "16:9" | "9:16" = "1:1") => {
   const ai = getAI();
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash-image',
+    model: 'gemini-1.5-flash-latest',
     contents: {
       parts: [{ text: `Professional startup logo or product mockup: ${prompt}. High-end tech aesthetic, clean, modern.` }],
     },

@@ -5,19 +5,21 @@ import {
   LineChart, 
   Mic2, 
   Palette, 
-  BookOpen, 
   Settings,
   ChevronRight,
+  User,
   Sparkles,
   Zap,
   Github,
-  Award
+  Award,
+  Briefcase
 } from 'lucide-react';
 import { AppView } from './types';
 import PitchLab from './components/PitchLab';
 import MarketIntel from './components/MarketIntel';
 import BrandStudio from './components/BrandStudio';
-import StrategyRoom from './components/StrategyRoom';
+import Portfolio from './components/Portfolio';
+import Projects from './components/Projects';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<AppView>(AppView.DASHBOARD);
@@ -48,15 +50,16 @@ const App: React.FC = () => {
             <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
               <Zap className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-xl font-bold tracking-tight">IgniteFlow</h1>
+            <h1 className="text-xl font-bold tracking-tight">Jules' AI Portfolio</h1>
           </div>
 
           <nav className="space-y-2">
-            <NavItem view={AppView.DASHBOARD} icon={<LayoutDashboard className="w-5 h-5" />} label="Founder Central" />
+            <NavItem view={AppView.DASHBOARD} icon={<LayoutDashboard className="w-5 h-5" />} label="Dashboard" />
             <NavItem view={AppView.MARKET_INTEL} icon={<LineChart className="w-5 h-5" />} label="Market Intel" />
             <NavItem view={AppView.PITCH_LAB} icon={<Mic2 className="w-5 h-5" />} label="Pitch Lab" />
             <NavItem view={AppView.BRAND_STUDIO} icon={<Palette className="w-5 h-5" />} label="Brand Studio" />
-            <NavItem view={AppView.STRATEGY_ROOM} icon={<BookOpen className="w-5 h-5" />} label="Strategy Room" />
+            <NavItem view={AppView.PORTFOLIO} icon={<User className="w-5 h-5" />} label="About Me" />
+            <NavItem view={AppView.PROJECTS} icon={<Briefcase className="w-5 h-5" />} label="Projects" />
           </nav>
         </div>
 
@@ -95,10 +98,10 @@ const App: React.FC = () => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">
                     <Sparkles className="w-4 h-4" />
-                    <span>Accelerator Dashboard</span>
+                    <span>Welcome to my Portfolio</span>
                   </div>
-                  <h2 className="text-4xl font-extrabold text-white">Welcome, Founder.</h2>
-                  <p className="text-gray-400 text-lg">Your journey from idea to IPO starts with IgniteFlow.</p>
+                  <h2 data-testid="main-heading" className="text-4xl font-extrabold text-white">Jules' AI Portfolio</h2>
+                  <p className="text-gray-400 text-lg">A showcase of my skills in building AI-powered applications.</p>
                 </div>
                 <div className="flex gap-3">
                   <button className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-medium transition-all">View Roadmap</button>
@@ -194,7 +197,8 @@ const App: React.FC = () => {
           {currentView === AppView.MARKET_INTEL && <MarketIntel />}
           {currentView === AppView.PITCH_LAB && <PitchLab />}
           {currentView === AppView.BRAND_STUDIO && <BrandStudio />}
-          {currentView === AppView.STRATEGY_ROOM && <StrategyRoom />}
+          {currentView === AppView.PORTFOLIO && <Portfolio />}
+          {currentView === AppView.PROJECTS && <Projects setCurrentView={setCurrentView} />}
         </div>
       </main>
     </div>

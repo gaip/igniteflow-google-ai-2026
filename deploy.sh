@@ -2,7 +2,7 @@
 
 # Configuration
 PROJECT_ID=$(gcloud config get-value project)
-APP_NAME="igniteflow-portfolio"
+APP_NAME="jules-ai-portfolio"
 REGION="us-central1"
 
 echo "Deploying $APP_NAME to project $PROJECT_ID in $REGION..."
