@@ -8,11 +8,10 @@ RUN npm ci
 
 COPY . .
 
-# NOTE: For a static frontend without a backend proxy, the API Key must be present at build time to be valid in the browser code.
-# You can pass this via --build-arg GEMINI_API_KEY=...
-ARG GEMINI_API_KEY
-ENV VITE_GEMINI_API_KEY=$GEMINI_API_KEY
-ENV GEMINI_API_KEY=$GEMINI_API_KEY
+# Receive the API Key from build args
+ARG _GEMINI_API_KEY
+ENV VITE_GEMINI_API_KEY=$_GEMINI_API_KEY
+ENV GEMINI_API_KEY=$_GEMINI_API_KEY
 
 RUN npm run build
 

@@ -1,0 +1,13 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: 
+  - 'build'
+  - '-t'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/igniteflow-repo/$_APP_NAME'
+  - '--build-arg'
+  - '_GEMINI_API_KEY=$_GEMINI_API_KEY'
+  - '.'
+images:
+- 'us-central1-docker.pkg.dev/$PROJECT_ID/igniteflow-repo/$_APP_NAME'
+substitutions:
+    _APP_NAME: igniteflow-portfolio-2026

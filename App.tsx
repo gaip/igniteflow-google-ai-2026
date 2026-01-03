@@ -67,7 +67,7 @@ const App: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-yellow-500">Contest Ready</span>
             </div>
             <p className="text-[10px] text-gray-400 leading-relaxed">
-              Build your GFS Startup School entry with enterprise-grade AI modules.
+              Build your "New Year, New You" Portfolio entry with enterprise-grade AI modules.
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -102,7 +102,7 @@ const App: React.FC = () => {
                 </div>
                 <div className="flex gap-3">
                   <button className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-medium transition-all">View Roadmap</button>
-                  <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold shadow-lg shadow-blue-500/30 transition-all">Submit to GFS</button>
+                  <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold shadow-lg shadow-blue-500/30 transition-all">Submit Portfolio</button>
                 </div>
               </header>
 
