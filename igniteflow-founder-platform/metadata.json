@@ -1,8 +1,0 @@
-{
-  "name": "IgniteFlow - Founder Strategic Platform",
-  "description": "A high-end strategic platform for startup founders featuring deep VC analysis, market intelligence, and brand studio tools powered by Gemini 3 Pro reasoning.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
-}
